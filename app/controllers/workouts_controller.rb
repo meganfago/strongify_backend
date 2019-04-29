@@ -17,6 +17,7 @@ class WorkoutsController < ApplicationController
         else
             render json: {errors: @workout.errors.full_messages},
             status: :unprocessable_entity
+        end
     end 
 
     def update

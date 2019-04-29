@@ -9,11 +9,13 @@
 Workout.destroy_all
 Exercise.destroy_all
 WorkoutExercise.destroy_all
+User.destroy_all
 
+User.create(name: "Megan", username: "meganfago", email: "meganfago@strongify.com")
 
-upper_body_a = Workout.create(name: "Upper Body A", user_id: 3)
-upper_body_b = Workout.create(name: "Upper Body B", user_id: 3)
-leg_day = Workout.create(name: "Leg Day", user_id: 3)
+upper_body_a = Workout.create(name: "Upper Body A", user_id: 1)
+upper_body_b = Workout.create(name: "Upper Body B", user_id: 1)
+leg_day = Workout.create(name: "Leg Day", user_id: 1)
 
 bench_press = Exercise.create(name: "Bench Press")
 curls = Exercise.create(name: "Curls")

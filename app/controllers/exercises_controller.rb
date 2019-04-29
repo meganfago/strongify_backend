@@ -12,6 +12,7 @@ class ExercisesController < ApplicationController
             render json: {errors: @exercise.errors.full_messages},
             status: :unprocessable_entity
       end
+    end 
 
       def update
         @exercise = Exercise.find(params[:id])
