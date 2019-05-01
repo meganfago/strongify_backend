@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+    before_action: authorize!
 
     def index 
         @workouts = Workout.all 
