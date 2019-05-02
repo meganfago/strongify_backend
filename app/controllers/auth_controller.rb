@@ -6,7 +6,7 @@ class AuthController < ApplicationController
             ## then do whatever to log them in
             ## generate token that contains a user id
             token = JWT.encode({userId: @user.id}, ENV['SECRET'], 'HS256')
-            render json: {token: token, username: @user.username}, status: :ok 
+            render json: {token: token, username: @user.username, name: @user.name}, status: :ok 
         else
             render json: { error: "Couldn't log in" }, status: :unauthorized
         end 
