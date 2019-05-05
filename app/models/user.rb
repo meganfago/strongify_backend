@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_many :workouts 
-    has_many :workout_exercises, through: :workouts
+    has_many :user_workouts, through: :workouts
 
     validates :name, presence: true, length: { minimum: 2 }
     validates :username, presence: true, length: { minimum: 2 }, uniqueness: true

@@ -34,7 +34,7 @@ class WorkoutsController < ApplicationController
     private 
 
     def workout_params
-        params.permit(:name, :user_id)
+        params.permit(:workout_name, :exercise_name, :sets, :reps, :weight)
     end 
 
 end
