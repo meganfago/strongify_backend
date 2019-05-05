@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_195212) do
+ActiveRecord::Schema.define(version: 2019_05_05_160043) do
 
-  create_table "exercises", force: :cascade do |t|
-    t.string "name"
+  create_table "user_workouts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "workout_id"
+    t.integer "user_sets"
+    t.integer "user_reps"
+    t.integer "user_weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,21 +31,14 @@ ActiveRecord::Schema.define(version: 2019_04_29_195212) do
     t.string "password_digest"
   end
 
-  create_table "workout_exercises", force: :cascade do |t|
-    t.integer "workout_id"
-    t.integer "exercise_id"
+  create_table "workouts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "workout_name"
+    t.string "exercise_name"
     t.integer "sets"
     t.integer "reps"
     t.integer "weight"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "workouts", force: :cascade do |t|
-    t.string "name"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
