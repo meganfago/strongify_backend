@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        render json: @user, status: :ok
+        render json: @user.to_custom_json, status: :ok
     end 
 
     def create
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
         @user.destroy
     end 
 
+    
     private 
 
     def user_params 
