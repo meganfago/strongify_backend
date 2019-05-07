@@ -28,6 +28,14 @@ class UserWorkoutsController < ApplicationController
         @user_workout = UserWorkout.find(params[:id])
         @user_workout.destroy
     end 
+    
+    def myworkouts 
+        #binding.pry
+        @user = User.find_by(id: userworkout_params['user_id']) 
+        @workouts = @user.workouts
+        @user_workouts = @user.user_workouts 
+        render json: {user_workouts: @user_workouts, workouts: @workouts} , status: :ok
+      end   
 
     private 
 
