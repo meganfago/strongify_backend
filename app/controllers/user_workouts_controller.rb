@@ -35,13 +35,17 @@ class UserWorkoutsController < ApplicationController
         @workouts = @user.workouts
         @user_workouts = @user.user_workouts 
         render json: {user_workouts: @user_workouts, workouts: @workouts} , status: :ok
-      end   
+      end  
 
     private 
 
     def userworkout_params 
-        params.permit(:workout_id, :user_id, :user_sets, :user_reps, :user_weight,
-            :user_sets2, :user_reps2, :user_weight2,
-            :user_sets3, :user_reps3, :user_weight3)
+        params.permit(:workout_id, :user_id, :user_sets, 
+            :user_reps, :user_weight,
+            :user_sets2, :user_reps2, 
+            :user_weight2,:user_sets3, 
+            :user_reps3, :user_weight3,
+            :description, :workout_name, 
+            :exercise_name, :exercise_name2, :exercise_name3)
     end
 end

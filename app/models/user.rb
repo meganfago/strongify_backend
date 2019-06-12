@@ -13,8 +13,7 @@ class User < ApplicationRecord
             username: self.username,
             email: self.email,
             image: self.image, 
-            workouts: self.workouts,
-            user_workouts: self.user_workouts
+            workouts: self.user_workouts
         }
     end 
     
