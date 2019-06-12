@@ -30,7 +30,6 @@ class UsersController < ApplicationController
         @user.destroy
     end 
 
-    
     private 
 
     def user_params 
